@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>covid</title>
+</head>
+<body>
+ <div id="container"></div>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<script>
+    Highcharts.chart('container', {
+
+  title: {
+    text: 'Covid chart'
+  },
+
+  subtitle: {
+    text: '월별 회복자수'
+  },
+
+  yAxis: {
+    title: {
+      text: 'Number of Employees'
+    }
+  },
+
+  xAxis: {
+    accessibility: {
+      rangeDescription: 'Range: 2 to 6'
+    }
+  },
+
+  legend: {
+    layout: 'vertical',
+    align: 'right',
+    verticalAlign: 'middle'
+  },
+
+  plotOptions: {
+    series: {
+      label: {
+        connectorAllowed: false
+      },
+      pointStart: 2
+    }
+  },
+
+  series: [{
+    name: 'Korea',
+    data: [27, 5408, 9072, 10422, 10856]
+  }, {
+    name: 'France',
+    data: [0, 12, 11053, 50212, 68558]
+  }, {
+    name: 'US',
+    date: [0,7,8474,164015,458231]
+  }, {
+    name: 'United Kingdom',
+    data: [0, 8, 179, 892, 1221]
+  }, {
+    name: 'Germany',
+    data: [16, 16100, 123500, 165352, 173972]
+  }],
+
+  responsive: {
+    rules: [{
+      condition: {
+        maxWidth: 500
+      },
+      chartOptions: {
+        legend: {
+          layout: 'horizontal',
+          align: 'center',
+          verticalAlign: 'bottom'
+        }
+      }
+    }]
+  }
+
+});
+</script>
+</body>
+</html>
